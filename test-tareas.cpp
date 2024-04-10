@@ -14,6 +14,19 @@ struct Tablero {
 };
 Tablero tablerito;
 
+string tableroBase[64];
+bool tableroEnJaqueMate(Tablero &tablero) {
+    tableroBase[2] = "d";
+    cout << tableroBase[2] << endl;
+    for (int i= 0; i < tablero.cantidad_piezas; i++) {
+        char
+        l = tablero.piezas_tablero[i].simbolo; 
+        cout << l << endl;
+
+    }
+    return false;
+};
+
 Pieza* LecturaTexto(int &no_piezas) {
     ifstream text; 
     text.open("tablero.txt"); /* abre el archivo tablero.txt para lectura*/
@@ -45,6 +58,7 @@ int main() {
     int no_piezas; /*Numero de piezas en juego*/
     tablerito.piezas_tablero = LecturaTexto(no_piezas); /*invoca a la funcion, y devuelve los arreglos de simbolos y coordenadas de las piezas*/
 
+    cout << tableroEnJaqueMate(tablerito) << endl;
     cout<< tablerito.piezas_tablero[0].simbolo << endl;
     cout << tablerito.piezas_tablero[0].x << endl;
     cout << tablerito.piezas_tablero[0].y << endl;
